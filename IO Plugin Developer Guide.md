@@ -86,7 +86,7 @@ The main parts of the project that you will modify are the VIs in the States fol
     - Periodic: Specify a millisecond period for the Process loop to run at.  Useful for status data sources such as system health that don't get timing from a hardware driver call.  Avoid using this for process or sink PEs, since if the data source produces data more quickly than the data sink runs, a memory growth will occur in the queue linking the plugins.
     - Immediate: Run the process loop as quickly as possible, with no added delay between calls. Use if the Process loop blocks execution on its own, for instance to wait for DAQ samples to be ready.
     - On Data Ready: Run process whenever data arrives on the Input stream. Use for sink or process PEs that process input data that comes from another plugin.  Do not use for data source plugins.  Use this instead of Periodic to avoid memory growth.
-    - Triggered: Use if you configure triggering on the Input stream to only receive data when a trigger condition applies.
+    - Triggered: A mode only applicable in FlexLogger - do not use in Data Record AD 
   - Most plugins will use Immediate if they are the source of data or On Data Ready if they are a sink of data.
 - ### Read Parameters
   - You do not need to edit this function.  
