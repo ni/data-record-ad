@@ -140,9 +140,6 @@ The main parts of the project that you will modify are the VIs in the States fol
 	- PEs using reference data (such as IMAQ Image References) should pre-allocate a reasonably-sized ring buffer and reuse reference locations
 	
 
-## PEF Background
-https://dev.azure.com/ni/DevCentral/_wiki/wikis/AppCentral.wiki/881/Processing-Element-Framework-(PEF)
-
 ## PEF Features to Leverage
 
 	- CustomData and CustomDataCleanup
