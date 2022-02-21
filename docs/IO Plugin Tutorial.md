@@ -46,7 +46,19 @@ When the project is completely generated, a Windows Explorer window will open at
 <img src="https://user-images.githubusercontent.com/15633959/155002647-97bed789-8c7e-424b-91ac-835cc45d9695.png" width="600">
 
 ### Edit IO Plugin Configuration Parameters
-Open the generated project.  
+Open the generated project.  Navigate down to the Configuration.ctl type definition (PE >> RandomNumberGenerator.lvlib >> RandomNumberGenerator.lvclass >> Types).  Modify the type definition to have four numeric controls as shown here:
+  
+![image](https://user-images.githubusercontent.com/15633959/155005939-c421a0d3-e5e8-4105-a198-0c3651ef40c4.png)
+
+Two of these configuration parameters were selected because we plan to use the _Random Number (range).vi_ from the Numeric palette to be able to generate random doubles:
+  
+![image](https://user-images.githubusercontent.com/15633959/155004828-9ae3b8bc-2dee-48ac-9891-f1a42b9dbdfb.png)
+
+Removing the string from the type definition will cause the _Mutate Configuration to Current.vi_ to break.
+  
+![image](https://user-images.githubusercontent.com/15633959/155006182-eb805d84-166c-4fb6-bf09-7e6a2138a159.png)
+
+
   
 ## Create Data Sink IO Plugin - Text File
 
