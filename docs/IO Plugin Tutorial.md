@@ -54,9 +54,59 @@ Two of these configuration parameters were selected because we plan to use the _
   
 ![image](https://user-images.githubusercontent.com/15633959/155004828-9ae3b8bc-2dee-48ac-9891-f1a42b9dbdfb.png)
 
+### Update Mutate Configuration to Current VI
 Removing the string from the type definition will cause the _Mutate Configuration to Current.vi_ to break.
   
 ![image](https://user-images.githubusercontent.com/15633959/155006182-eb805d84-166c-4fb6-bf09-7e6a2138a159.png)
+
+<img src="https://user-images.githubusercontent.com/15633959/155187451-624f328c-c056-42f8-aa62-2e0982c9c083.png" width="1000">
+  
+The purpose of this VI is to mutate configurations if they are changed in future releases of the plugin.  For example, if the configuration used to be a full file path but it changes to a directory and file name, the original file path could be split into two components and the old configuration would work with the updated plugin.
+  
+In our case, we have not released the plugin so we do not need to worry about mutating the configuration.  The simplest thing to do right now would be to simply pass through the cluster:
+  
+<img src="https://user-images.githubusercontent.com/15633959/155187904-dff1afa7-677d-4cb1-8652-84b5ef83527b.png" width="1000">
+
+### Update States
+Expanding the states folder will show the core states the IO plugin will cycle through.  The project will have the states listed alphabetically but some developers find it helpful to rearrange them to better correlate to their order of operation:
+  
+<img src="https://user-images.githubusercontent.com/15633959/155188525-423e2b7f-38cd-4d00-b432-fa8f296f517e.png" width="800">
+
+#### Initialize
+Initialize is the first state an IO plugin executes.  It's purpose is to initialize global lifetime resources for the plugin.  If your plugin involves hardware you may open a reference to the hardware in Initialize.
+  
+![image](https://user-images.githubusercontent.com/15633959/155189729-8f141733-c2f0-46f3-8012-afabcc3fd156.png)
+
+Typically the timing parameters of the _Process_ state are set in _Initialize_ unless the timing is user configurable.  Timing options include Periodic, Immediate or OnDataReday. Triggered is not implemented for IO Plugins and should not be used.
+  
+In the plugin we are developing, we allow the user to set the update rate for periodic generation.  We should remove the _Write Timing Parameters.vi_ as we need to read our configuration before we can set the value.
+  
+![image](https://user-images.githubusercontent.com/15633959/155191068-241b9adc-4698-41e9-bd5f-2ef1475b8fcd.png)
+
+#### Read Parameters
+It is rare that this state requires any modifications.  It simply populates the IO plugin class with the configuration data.  We will not make any changes.
+  
+![image](https://user-images.githubusercontent.com/15633959/155192964-2d2eab2a-9171-46ee-8c59-72e361b99d51.png)
+  
+#### Configure Session
+All of the configuration parameters have been populated into the IO plugin class.  We can now configure the timing parameters using the configuration parameter.  The _Write Timing Paramters.vi_ can be found in Dependencies >> vi.lib >> PluginSDK.lvlibp >> Processing Element.lvclass >> Properties >> Timing Parameters:
+
+![image](https://user-images.githubusercontent.com/15633959/155196177-91879c25-4d1c-44e4-bad0-90924564a4b0.png)
+
+You may also find it easier to navigate to the PPL on disk: C:\Program Files\National Instruments\LabVIEW 2020\vi.lib\FlexLogger\SDK\PluginSDK.lvlibp
+ 
+Unbundle the _Update Rate (ms)_ from the configuration and bundle it into _Timing Period (ms)_:
+
+![image](https://user-images.githubusercontent.com/15633959/155197870-db047b0d-e038-4d2c-8a7a-1c7fbded79d9.png)
+
+
+#### Process
+
+  
+  
+#### Cleanup Session
+
+#### Configure Session
 
 
   
