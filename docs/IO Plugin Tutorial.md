@@ -99,8 +99,10 @@ Unbundle the _Update Rate (ms)_ from the configuration and bundle it into _Timin
 
 ![image](https://user-images.githubusercontent.com/15633959/155197870-db047b0d-e038-4d2c-8a7a-1c7fbded79d9.png)
 
-
 #### Process
+The majority of your plugin behavior is typically implemented within the _Process_ state.
+  
+![image](https://user-images.githubusercontent.com/15633959/155199131-e7e2b189-9b37-4508-8410-465d4e879bac.png)
 
   
   
