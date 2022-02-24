@@ -118,12 +118,18 @@ If you change the _Terminal_ name to anything other than the default you will ne
 
 <img src="https://user-images.githubusercontent.com/15633959/155563213-51f3553a-9ce0-4882-b24b-fa4ab907ba98.png" width="800">
  
-  
 #### Cleanup Session
+This is the state that runs before reconfigure and/or after process while shutting down.  It is where you should close/cleanup any session resources that were opened in _Configure Session_.  No changes are necessary to _Cleanup Sessio_n for our plugin.  
 
-#### Configure Session
+![image](https://user-images.githubusercontent.com/15633959/155563913-7a1c308e-4968-42a7-994c-ac2d5a5abaca.png)
 
+#### Finalize
+This is the final state that runs before Data Record AD shuts down.  It is where you should close/cleanup any resources that were opened in _Initialize_.  No changes are necessary to _Finalize_ for our plugin.
+  
+![image](https://user-images.githubusercontent.com/15633959/155564078-727fc455-8f05-4e26-b5bd-95ea6e3b7d0c.png)
 
+### Build IO Plugin 
+  
   
 ## Create Data Sink IO Plugin - Text File
 
