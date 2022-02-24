@@ -119,7 +119,7 @@ If you change the _Terminal_ name to anything other than the default you will ne
 <img src="https://user-images.githubusercontent.com/15633959/155563213-51f3553a-9ce0-4882-b24b-fa4ab907ba98.png" width="800">
  
 #### Cleanup Session
-This is the state that runs before reconfigure and/or after process while shutting down.  It is where you should close/cleanup any session resources that were opened in _Configure Session_.  No changes are necessary to _Cleanup Sessio_n for our plugin.  
+This is the state that runs before reconfigure and/or after process while shutting down.  It is where you should close/cleanup any session resources that were opened in _Configure Session_.  No changes are necessary to _Cleanup Session_ for our plugin.  
 
 ![image](https://user-images.githubusercontent.com/15633959/155563913-7a1c308e-4968-42a7-994c-ac2d5a5abaca.png)
 
@@ -135,6 +135,8 @@ This is the final state that runs before Data Record AD shuts down.  It is where
 
 ## Create Data Processor IO Plugin - Scaling Factor
 
+## Create Publishing Plugin - publish to gRPC client or some other simple UI element. 
+### This could be TCP/IP, SystemLink, DataStreamGrpc Demo
 
 ## Modify Random Number Generator to Support a Plugin-Targeted gRPC Message
 
