@@ -110,13 +110,13 @@ For our plugin, we want to generate user specified _n_ random numbers between th
 
 One important input to the _Write ADAS Data.vi_  is the _Terminal_ input.  We have a constant "Output" here.  This is the text that will appear in the Data Record AD System Configuration Editor.  You can change the _Terminal_ name as shown below:
 
-![image](https://user-images.githubusercontent.com/15633959/155561982-b06662fe-344c-4a07-a52a-b9ead3c28b87.png)
+<img src="https://user-images.githubusercontent.com/15633959/155561982-b06662fe-344c-4a07-a52a-b9ead3c28b87.png" width="600">
 
 If you change the _Terminal_ name to anything other than the default you will need to update _RandomNumberGenerator.lvlib:RandomNumberGenerator Controller.lvclass:Read Output Streams.vi_:
   
 ![image](https://user-images.githubusercontent.com/15633959/155562804-8445a207-18ef-40c4-a370-6c4c4c5a15c4.png)
 
- ![image](https://user-images.githubusercontent.com/15633959/155563213-51f3553a-9ce0-4882-b24b-fa4ab907ba98.png)
+<img src="https://user-images.githubusercontent.com/15633959/155563213-51f3553a-9ce0-4882-b24b-fa4ab907ba98.png" width="800">
  
   
 #### Cleanup Session
