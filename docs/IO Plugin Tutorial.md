@@ -100,11 +100,24 @@ Unbundle the _Update Rate (ms)_ from the configuration and bundle it into _Timin
 ![image](https://user-images.githubusercontent.com/15633959/155197870-db047b0d-e038-4d2c-8a7a-1c7fbded79d9.png)
 
 #### Process
-The majority of your plugin behavior is typically implemented within the _Process_ state.
+The majority of your plugin behavior is typically implemented within the _Process_ state.  Process runs repeatedly in a loop until Data Record AD is shutdown.  The loop rate depends upon your timing parameters previously set.  The template code contains helpful bookmarks discussing _Custom Data_ but no actual code.
   
 ![image](https://user-images.githubusercontent.com/15633959/155199131-e7e2b189-9b37-4508-8410-465d4e879bac.png)
 
+For our plugin, we want to generate user specified _n_ random numbers between the user specified lower and upper bound.  We will use the _Random Number (Range).vi_ with type _DBL_ to generate these numbers.  We need to write these numbers to the Data Record AD engine.  The _Write ADAS Data.vi_ polymorphic custom data VI should be used to write the data.  It can be found in _C:\Program Files\National Instruments\LabVIEW 2020\vi.lib\ADAS Record\CustomDataTypes_.  We will use the _Double_ type.
   
+![image](https://user-images.githubusercontent.com/15633959/155559435-22a9decf-f67e-499e-952b-b185332044ef.png)
+
+One important input to the _Write ADAS Data.vi_  is the _Terminal_ input.  We have a constant "Output" here.  This is the text that will appear in the Data Record AD System Configuration Editor.  You can change the _Terminal_ name as shown below:
+
+![image](https://user-images.githubusercontent.com/15633959/155561982-b06662fe-344c-4a07-a52a-b9ead3c28b87.png)
+
+If you change the _Terminal_ name to anything other than the default you will need to update _RandomNumberGenerator.lvlib:RandomNumberGenerator Controller.lvclass:Read Output Streams.vi_:
+  
+![image](https://user-images.githubusercontent.com/15633959/155562804-8445a207-18ef-40c4-a370-6c4c4c5a15c4.png)
+
+ ![image](https://user-images.githubusercontent.com/15633959/155563213-51f3553a-9ce0-4882-b24b-fa4ab907ba98.png)
+ 
   
 #### Cleanup Session
 
