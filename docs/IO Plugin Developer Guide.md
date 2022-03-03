@@ -172,3 +172,4 @@ Multi-PE example (in some Integration Tests project that has source for both PEs
 
 ## DataStreamGrpc Messaging
 
+Whenever using a new DataStreamGrpc Server or client in a plugin, please ensure you have included `<vi.lib>/DataStreamGrpc/External/zlib.dll` in your LabVIEW project, and marked it as an Always Include in the LabVIEW Build Specification for your PPL. This DLL is a compression library required as a dependency for gRPC, but is not called directly anywhere in the DataStreamGrpc LabVIEW API, so LabVIEW does not know to copy it when building the PPL. If you skip this step, you will see **Error 1498** from the build PPL on its first gRPC call.
