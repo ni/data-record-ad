@@ -1,0 +1,51 @@
+{
+  "Version": {
+    "Major": 1,
+    "Minor": 0,
+    "Fix": 0,
+    "Build": 0
+  },
+  "AdasVersion": {
+    "Major": 0,
+    "Minor": 0,
+    "Fix": 0,
+    "Build": 1
+  },
+  "GeneralDescription": "",
+  "ioPlugins": [
+    {
+      "DisplayName": "Wizard-Created Plugin",
+      "Description": "",
+      "TypeID": "IOPluginWizardTest",
+      "InstanceID": "5e80a703-53df-4ebe-9a56-fe83c6ddedd3",
+      "Configurations": [
+        {
+          "Version": {
+            "Major": 1,
+            "Minor": 0,
+            "Fix": 0,
+            "Build": 0
+          },
+          "Configuration": {
+            "Name": "Configuration",
+            "DataType": "Container",
+            "ExtraTypeInfo": "",
+            "DataValue": "",
+            "SubNodes": [
+              {
+                "Name": "Parameter1",
+                "DataType": "String",
+                "ExtraTypeInfo": "",
+                "DataValue": "TestParam",
+                "SubNodes": []
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "uiPlugins": [],
+  "ioLinks": [],
+  "layoutLinks": []
+}

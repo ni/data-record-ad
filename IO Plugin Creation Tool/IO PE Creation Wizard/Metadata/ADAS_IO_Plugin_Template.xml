@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="Windows-1252" standalone="yes"?>
+<MetaData>
+	<ProjectTemplate>
+		<Title>ADAS IO Plugin Template</Title>
+		<Description>A template to create a new ADAS Input-Output Plugin</Description>
+		<Filters>ADAS</Filters>
+		<LocationPath>ADAS/ADAS IO Template</LocationPath>
+		<ListboxImagePath>images/icon.png</ListboxImagePath>
+		<ProjectPath>PE Template/PE Template Project.lvproj</ProjectPath>
+		<SortPriority>300</SortPriority>
+		<MetaDataClass>scripting/IO PE Creation MDO/ADAS_IO_Template_MDO.lvclass</MetaDataClass>
+		<CustomVIMode>AfterPage2NoUI</CustomVIMode>
+		<CustomVIPath>scripting/IO PE Creation MDO/PostCopyScripting.vi</CustomVIPath>
+	</ProjectTemplate>
+</MetaData>
