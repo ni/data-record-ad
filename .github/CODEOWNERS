@@ -1,0 +1,9 @@
+# Each line is a file pattern followed by one or more owners.
+
+## GLOBAL OWNERS
+# Default owners for anything in the repo
+# Last matching pattern has greatest precedence, so any following patterns will not also tag global owners
+* @dkapulkin @JLMommy @aggieslaughter
+
+# Any new Custom Data Type must be reviewed by Daniel, Becky, Matt
+/Custom\ Data\ Type\ API/ @dkapulkin @JLMommy @aggieslaughter
