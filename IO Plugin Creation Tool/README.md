@@ -10,7 +10,7 @@ Run the resulting NIPKG to install all necessary files to their necessary locati
 
 ## PE Template
 
-The template PE LVPROJ is located in `data-record-ad-internal\IO Plugin Creation Tool\PE Template`.
+The template PE LVPROJ is located in `data-record-ad\IO Plugin Creation Tool\PE Template`.
 
 Each IO plugin consists of several required components that are stubbed out in the template. Plugins are class-based, and the classes inherit from parents defined in PEF's PluginSDK.lvlibp.
 
@@ -28,7 +28,7 @@ The tests folder of the template includes a simple Caraya test to validate wheth
 
 ## LabVIEW Project Wizard
 
-The source code for the LabVIEW Project Wizard is located in `data-record-ad-internal\IO Plugin Creation Tool\IO PE Creation Wizard`.
+The source code for the LabVIEW Project Wizard is located in `data-record-ad\IO Plugin Creation Tool\IO PE Creation Wizard`.
 
 The wizard consists of the Metadata Object (MDO) and Spec Pages for integration with LabVIEW's Create Project Window. The scripting code mostly occurs in PostCopyScripting.vi to perform all of the renames on the copied template.
 
