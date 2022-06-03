@@ -1,3 +1,7 @@
+# Branches
+
+All development work will be completed in a branch.  The branch will follow the naming convention _users/<firstinitiallastname>/<task>_.  For example, if a developer named John Smith creates an IO plugin for acquisition of a thermocouple, a valid branch name is _users/jsmith/IOpluginThermocoupleAcq_.
+
 # Plugins
 
 Submit a PR for your plugin. Fill out the PR template and attach a log of your tests running locally.
