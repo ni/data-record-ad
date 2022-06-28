@@ -9,13 +9,20 @@ Installing the **_Data Record AD Development Suite_** installs various LabVIEW l
 This library has a number of VIMs that allow users to send/receive data to the Data Record AD engine.  It is easy to make a mistake while using these VIMs so these have been abstracted with the use of **_Custom Data Types_**.  It is recommended that developers use the Custom Data Type polymorphic VIs described below over the low-level _CustomData_ library.
 
 ## Getting Started
-Custom Data Types 
+Custom Data Types refers to a series of VIs and a wrapper API to the `CustomData.lvlib` VIs.  The objective is for all data transfer between user plugins to use this API by calling the required instance of the Write or Read ADAS Data polymorphic VI, thereby reducing user error when coupling writer and reader plugins.
 
 ### Installing Custom Data Types
+Custom Data Types should only reside in the _(\<LabVIEW Installation Directory>\vi.lib\ADAS Record\CustomDataTypes)_ directory.  There is no NIPM or VIPM package for installing this library.  Instead, the latest Custom Data Types must be checked out from this GitHub repository.  A python script exists within the top-level directory, setupEnv_CustomDataTypes.py.  
+
+Run the script to copy the files to the appropriate location in vi.lib.  Use the -f flag to overwrite if necessary.
+
+Running the script with the -r flag reverses the action.  It copies any new or modified Custom Data Types back from vi.lib to your repository checkout location.
+
+![image](https://user-images.githubusercontent.com/15633959/176289108-239acade-c8b1-4340-8f53-a7858d7afc5e.png)
+
 
 ### Creating/Editing/Removing Custom Data Types
-
-
+See [this README](../CustomData/CustomDataTypeScriptingUtility#readme) for details on using the Custom Data Type Scripting Utility to create, edit and remove Custom Data Types.
 
 ## Developer Notes
 ### Pull Requests for Custom Data Types
