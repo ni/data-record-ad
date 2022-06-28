@@ -14,9 +14,9 @@ Custom Data Types refers to a series of VIs and a wrapper API to the `CustomData
 ### Installing Custom Data Types
 Custom Data Types should only reside in the _(\<LabVIEW Installation Directory>\vi.lib\ADAS Record\CustomDataTypes)_ directory.  There is no NIPM or VIPM package for installing this library.  Instead, the latest Custom Data Types must be checked out from this GitHub repository.  A python script exists within the top-level directory, setupEnv_CustomDataTypes.py.  
 
-Run the script to copy the files to the appropriate location in vi.lib.  Use the -f flag to overwrite if necessary.
+Run the script to move the necessary files to the appropriate location in vi.lib.  Use the -f flag to overwrite if necessary.
 
-Running the script with the -r flag reverses the action.  It copies any new or modified Custom Data Types back from vi.lib to your repository checkout location.
+Running the script with the -r flag reverses the action.  It moves Custom Data Types back from vi.lib to your repository checkout location so added/edited/removed files can be checked back in.
 
 ![image](https://user-images.githubusercontent.com/15633959/176289108-239acade-c8b1-4340-8f53-a7858d7afc5e.png)
 
@@ -34,3 +34,4 @@ If the data type required by a developer does not already exist as a custom data
 Priority will be given to approving PRs for Custom Data Types.
 
 ### GIT Hooks
+If you would like to automate the calling of the python script for moving the Custom Data Types, please use the githooks provided [here](../Utilities/githooks).
