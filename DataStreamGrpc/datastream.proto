@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package NationalInstruments.DataStream;
+
+import "google/protobuf/empty.proto";
+
+service DataStreamService {
+  // Request the server to add a new subscriber.  Returns a unique token identifying the new subscriber.
+  rpc AddSubscriber(google.protobuf.Empty) returns (SubscriberToken);
+
+  // Remove the subscriber from the server.  This will also unsubscribe any topics automatically.
+  rpc RemoveSubscriber(SubscriberToken) returns (google.protobuf.Empty);
+
+  // Subscribe new messages for a given topic name.
+  rpc SubscribeTopic(TopicIdentifier) returns (google.protobuf.Empty);
+
+  // Unsubscribe new messages for a given topic name.
+  rpc UnsubscribeTopic(TopicIdentifier) returns (google.protobuf.Empty);
+
+  // Read the latest message for a given topic.  This call does not continuously return new messages,
+  // use StartReadingTopicMessages for continuously streaming of new messages.
+  rpc ReadLatestTopicMessage(TopicIdentifier) returns (TopicData);
+
+  // Stream any new messages from the subscribed topics.  The stream is long-lived and will keep open
+  // until StopReadingTopicMessages is called.
+  rpc StartReadingTopicMessages(SubscriberToken) returns (stream TopicData);
+
+  // Stop reading for subscribed topic messages.  This call will close the opened stream from
+  // StartReadingTopicMessages.
+  rpc StopReadingTopicMessages(SubscriberToken) returns (google.protobuf.Empty);
+
+  // Get all topics that are being subscribed by the subscriber.
+  rpc GetSubscribedTopics(SubscriberToken) returns (TopicList);
+
+  // Get all the topics that are being subscribed, regardless of subscriber.
+  rpc GetAllSubscribedTopics(google.protobuf.Empty) returns (TopicList);
+
+  // Publish a message to subscribers.
+  rpc PublishMessage(TopicData) returns (google.protobuf.Empty);
+}
+
+message SubscriberToken {  
+  int32 subscriberToken = 1;
+}
+
+message TopicIdentifier {
+    SubscriberToken subscriberToken = 1;
+    string topicName = 2;
+}
+
+message TopicData {
+    string topicName = 1;
+    bytes messageData = 2;
+}
+
+message TopicList {
+    repeated string topics = 1;
+}
