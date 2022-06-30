@@ -142,3 +142,16 @@ This is the final state that runs before Data Record AD shuts down.  It is where
 
 ## Additional Developer Features
 ### Icons
+If no icons are specified, the default plugin icon is used:
+  
+![image](https://user-images.githubusercontent.com/15633959/176736748-6c0fc8fe-0d2c-44e1-9dd0-cf43d901ef09.png)
+
+Users can also specify custom icons such as this:
+
+![image](https://user-images.githubusercontent.com/15633959/176736857-363df4f0-60f5-48d4-bf20-fadfa5c1f82d.png)
+
+To use a custom icon, create a 40x40 pixel image and save it as PluginIcon.png.  The file needs to reside within the deployed plugin directory:
+ 
+ _C:\Users\Public\Documents\National Instruments\ADAS\Plugins\IOPlugins\<PluginName>\PluginIcon.png_
+  
+  
