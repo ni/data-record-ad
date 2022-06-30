@@ -3,7 +3,9 @@ The purpose of this tutorial is to walk new IO plugin developers through the cre
 
 <img src="https://user-images.githubusercontent.com/15633959/154979199-e8fb5515-37d2-403d-aa80-6da8e54fdd91.png" width="300">
 
-The first plugin will generate random numbers.  The second plugin will save the generated numbers to disk as a text file.  The final plugin can be injected between the random number generator and the text file logger and it will allow the user to scale the random numbers.
+The first plugin will generate random numbers.  The second plugin will save the generated numbers to disk as a text file.  The third plugin can be injected between the random number generator and the text file logger and it will allow the user to scale the random numbers.
+
+As developers move through the tutorial they should note that less detailed instructions are provided for the second and third plugins - this is intentional.  If there are questions, the instructions for the first tutorial should be referenced.
 
 
 ## Update IO Plugin Project Template
@@ -54,6 +56,11 @@ Two of these configuration parameters were selected because we plan to use the _
   
 ![image](https://user-images.githubusercontent.com/15633959/155004828-9ae3b8bc-2dee-48ac-9891-f1a42b9dbdfb.png)
 
+Note: Setting the current values to default for the type definition controls does not set the default values for the controls within the Data Record AD System Configuration Editor.  To set default values for the controls you need to edit _Default Configuration Parameters.vi_.  The default values must be set on the block diagram - there is a note on the front panel to remind the user.
+  
+![image](https://user-images.githubusercontent.com/15633959/176756576-7a1601a3-4c89-4a07-a0e2-5a82161fe553.png)
+ 
+  
 ### Update Mutate Configuration to Current VI
 Removing the string from the type definition will cause the _Mutate Configuration to Current.vi_ to break.
   
@@ -141,8 +148,20 @@ Right-click on the specification and select _Build_.
 
 ![image](https://user-images.githubusercontent.com/15633959/176740984-40480d7c-c721-408d-8a8d-25855b104bf6.png)
 
-### Verify IO Plugin Build
-Launch the Data Record AD System Configuration Editor.
+### Test IO Plugin
+Launch the Data Record AD System Configuration Editor.  Create a new project.  Open the project's ADAS System Configuration.  From the IO Plugin palette, find your recently created _Random Number Generator_ IO plugin and add it to the configuration. 
+  
+![image](https://user-images.githubusercontent.com/15633959/176757516-664ade01-8890-4440-a5a8-3f516b4adf6a.png)
+
+In the configuration pane on the right verify that the default values you entered for the IO plugin configuration parameters are correct.  You can rename the plugin (i.e _New plugin instance_ --> _Random Number_), modify the configuration parameters and/or edit the description if you'd like.
+  
+Generate the configuration.  You can do this by switching from the Item to the Document pane in the configuration pane or by simple selecting the _Generate Configuration_ shortcut.
+
+![image](https://user-images.githubusercontent.com/15633959/176758274-045dd93f-5928-4114-929b-271bfd734cfc.png)
+
+Launch Data Record AD.  You should be able to see the IO Plugin name listed on the main Data Record AD application user interface.  You should also see it listed in the array of _Processing Element Statistics_ in the Data Record AD Debug Panel.  The _State_ of the IO Plugin should be _Processing_ and _Channel Segement Bytes_ and _Total Memory (MB)_ should not be static.
+  
+![image](https://user-images.githubusercontent.com/15633959/176759039-20b83c31-19b9-4b15-8d6c-236571c8b37e.png)
   
 ## Create Data Sink IO Plugin - Text File
 
