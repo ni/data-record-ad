@@ -7,6 +7,16 @@ The first plugin will generate random numbers.  The second plugin will save the 
 
 As developers move through the tutorial they should note that less detailed instructions are provided for the second and third plugins - this is intentional.  If there are questions, the instructions for the first tutorial should be referenced.
 
+# Table of Contents
+1. [Update IO Plugin Project Template](./IO%20Plugin%20Tutorial.md#update-io-plugin-project-template)
+1. [Create a Branch](./IO%20Plugin%20Tutorial.md#create-a-branch)
+1. [Create Data Source IO Plugin - Random Number Generator](./IO%20Plugin%20Tutorial.md#create-data-source-io-plugin---random-number-generator)
+1. [Create Data Sink IO Plugin - Text File](./IO%20Plugin%20Tutorial.md#create-data-sink-io-plugin---text-file)
+1. [Create Data Processing IO Plugin - Scaling Factor](./IO%20Plugin%20Tutorial.md#create-data-processor-io-plugin---scaling-factor)
+1. [Create Data Publisher IO Plugin - gRPC](./IO%20Plugin%20Tutorial.md#create-data-publisher-io-plugin---grpc)
+1. [Modify IO Plugin to Support Plugin-Targeted gRPC Messages]([./IO%20Plugin%20Tutorial.md#modify-io-plugin-to-support-a-plugin-targeted-grpc-message)
+1. [Additional Developer Features](./IO%20Plugin%20Tutorial.md#additional-developer-features)
+
 
 ## Update IO Plugin Project Template
 To assist developers with creating IO plugins, a LabVIEW Project Template has been created.  This project template is installed with the Data Record AD Development Suite.
@@ -56,12 +66,13 @@ Two of these configuration parameters were selected because we plan to use the _
   
 ![image](https://user-images.githubusercontent.com/15633959/155004828-9ae3b8bc-2dee-48ac-9891-f1a42b9dbdfb.png)
 
-Note: Setting the current values to default for the type definition controls does not set the default values for the controls within the Data Record AD System Configuration Editor.  To set default values for the controls you need to edit _Default Configuration Parameters.vi_.  The default values must be set on the block diagram - there is a note on the front panel to remind the user.
+### Set Default Configuration Parameters  
+Setting the current values to default for the type definition controls does not set the default values for the controls within the Data Record AD System Configuration Editor.  To set default values for the controls you need to edit _Default Configuration Parameters.vi_.  The default values must be set on the block diagram - there is a note on the front panel to remind the user.
   
 ![image](https://user-images.githubusercontent.com/15633959/176756576-7a1601a3-4c89-4a07-a0e2-5a82161fe553.png)
  
   
-### Update Mutate Configuration to Current VI
+### Update Mutate Configuration to Current
 Removing the string from the type definition will cause the _Mutate Configuration to Current.vi_ to break.
   
 ![image](https://user-images.githubusercontent.com/15633959/155006182-eb805d84-166c-4fb6-bf09-7e6a2138a159.png)
@@ -164,14 +175,58 @@ Launch Data Record AD.  You should be able to see the IO Plugin name listed on t
 ![image](https://user-images.githubusercontent.com/15633959/176759039-20b83c31-19b9-4b15-8d6c-236571c8b37e.png)
   
 ## Create Data Sink IO Plugin - Text File
-
+### Create Project
+### Edit IO Plugin Configuration Parameters
+### Set Default Configuration Parameters  
+### Update Mutate Current Configuration to Current  
+### Update States
+#### Initialize
+#### Read Parameters
+#### Configure Session
+#### Process
+#### Cleanup Session
+#### Finalize
+### Build IO Plugin
+### Test IO Plugin  
+  
 ## Create Data Processor IO Plugin - Scaling Factor
+### Create Project
+### Edit IO Plugin Configuration Parameters
+### Set Default Configuration Parameters  
+### Update Mutate Current Configuration to Current  
+### Update States
+#### Initialize
+#### Read Parameters
+#### Configure Session
+#### Process
+#### Cleanup Session
+#### Finalize
+### Build IO Plugin
+### Test IO Plugin 
+  
+## Create Data Publisher IO Plugin - gRPC 
+### Create Project
+### Edit IO Plugin Configuration Parameters
+### Set Default Configuration Parameters  
+### Update Mutate Current Configuration to Current  
+### Update States
+#### Initialize
+#### Read Parameters
+#### Configure Session
+#### Process
+#### Cleanup Session
+#### Finalize
+### Build IO Plugin
+### Test IO Plugin 
 
-## Create Publishing Plugin - publish to gRPC client or some other simple UI element. 
-### This could be TCP/IP, SystemLink, DataStreamGrpc Demo
-
-## Modify Random Number Generator to Support a Plugin-Targeted gRPC Message
-
+## Modify IO Plugin to Support a Plugin-Targeted gRPC Message
+### Open Project
+### Update States
+#### Handle Message
+#### Process
+### Build IO Plugin
+### Test IO Plugin 
+  
 ## Additional Developer Features
 ### Icons
 If no icons are specified, the default plugin icon is used:
