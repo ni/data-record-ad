@@ -150,8 +150,8 @@ Users can also specify custom icons such as this:
 
 ![image](https://user-images.githubusercontent.com/15633959/176736857-363df4f0-60f5-48d4-bf20-fadfa5c1f82d.png)
 
-To use a custom icon, create a 40x40 pixel image and save it as PluginIcon.png.  The file needs to reside within the deployed plugin directory:
+To use a custom icon, create a 40x40 pixel image and save it as PluginIcon.png.  Colors and transparency are supported.  The file needs to reside within the deployed plugin directory:
  
- _C:\Users\Public\Documents\National Instruments\ADAS\Plugins\IOPlugins\<PluginName>\PluginIcon.png_
+ _C:\Users\Public\Documents\National Instruments\ADAS\Plugins\IOPlugins\\<PluginName>\PluginIcon.png_
   
   
