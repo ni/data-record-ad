@@ -129,7 +129,20 @@ This is the final state that runs before Data Record AD shuts down.  It is where
 ![image](https://user-images.githubusercontent.com/15633959/155564078-727fc455-8f05-4e26-b5bd-95ea6e3b7d0c.png)
 
 ### Build IO Plugin 
+Expand the Build Specifications in the LabVIEW project.  The IO Plugin Project Template includes a predefined build specification for a Packed Project Library.  The build specification does not need any modifications.  Changing names may actual result in an unfunctional plugin.  
+
+The destination directory is set to be the default directory for IO plugins.  This makes it easy to test your plugin immediately.  This field could be modified if you are not working on a system with Data Record AD but wish to build a plugin for later installation.
+
+![image](https://user-images.githubusercontent.com/15633959/176742219-74ae714e-39d5-416d-ba1e-d8b44b5b763b.png)
+
+One modification that may be required is to add dependencies. If your plugin depends upon an exteral DLL or other file, you will need to add it to your project and specify it in _Source Files_ as an always included file.
   
+Right-click on the specification and select _Build_.
+
+![image](https://user-images.githubusercontent.com/15633959/176740984-40480d7c-c721-408d-8a8d-25855b104bf6.png)
+
+### Verify IO Plugin Build
+Launch the Data Record AD System Configuration Editor.
   
 ## Create Data Sink IO Plugin - Text File
 
