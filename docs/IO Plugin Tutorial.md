@@ -31,10 +31,12 @@ To use the python script, simply open a command prompt and type the script name.
 
 <img src="https://user-images.githubusercontent.com/15633959/154981599-a488b1dd-7108-46d8-b802-3ac69c51abdc.png" width="1000">
 
+[Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents)
 
 ## Create a Branch
-Before creating any plugins, if you want to work within the Data Record AD repository, it is necessary to create a branch to work in.  The recommended branch name for this tutorial is _users/<yourname>/sandbox/tutorial._  If this is your first time creating a branch, you may find [this tutorial](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository) helpful.
+Before creating any plugins, if you want to work within the Data Record AD repository, it is necessary to create a branch to work in.  The recommended branch name for this tutorial is _users/\<yourname>/sandbox/tutorial._  If this is your first time creating a branch, you may find [this tutorial](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository) helpful.
 
+[Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents)
 
 ## Create Data Source IO Plugin - Random Number Generator
 ### Create Project
@@ -173,7 +175,9 @@ Generate the configuration.  You can do this by switching from the Item to the D
 Launch Data Record AD.  You should be able to see the IO Plugin name listed on the main Data Record AD application user interface.  You should also see it listed in the array of _Processing Element Statistics_ in the Data Record AD Debug Panel.  The _State_ of the IO Plugin should be _Processing_ and _Channel Segement Bytes_ and _Total Memory (MB)_ should not be static.
   
 ![image](https://user-images.githubusercontent.com/15633959/176759039-20b83c31-19b9-4b15-8d6c-236571c8b37e.png)
-  
+
+[Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents)
+
 ## Create Data Sink IO Plugin - Text File
 ### Create Project
 ### Edit IO Plugin Configuration Parameters
@@ -188,7 +192,9 @@ Launch Data Record AD.  You should be able to see the IO Plugin name listed on t
 #### Finalize
 ### Build IO Plugin
 ### Test IO Plugin  
-  
+
+[Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents)
+
 ## Create Data Processor IO Plugin - Scaling Factor
 ### Create Project
 ### Edit IO Plugin Configuration Parameters
@@ -203,7 +209,9 @@ Launch Data Record AD.  You should be able to see the IO Plugin name listed on t
 #### Finalize
 ### Build IO Plugin
 ### Test IO Plugin 
-  
+
+[Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents)
+
 ## Create Data Publisher IO Plugin - gRPC 
 ### Create Project
 ### Edit IO Plugin Configuration Parameters
@@ -219,6 +227,8 @@ Launch Data Record AD.  You should be able to see the IO Plugin name listed on t
 ### Build IO Plugin
 ### Test IO Plugin 
 
+[Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents)
+
 ## Modify IO Plugin to Support a Plugin-Targeted gRPC Message
 ### Open Project
 ### Update States
@@ -226,7 +236,9 @@ Launch Data Record AD.  You should be able to see the IO Plugin name listed on t
 #### Process
 ### Build IO Plugin
 ### Test IO Plugin 
-  
+
+[Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents)
+
 ## Additional Developer Features
 ### Icons
 If no icons are specified, the default plugin icon is used:
@@ -241,4 +253,4 @@ To use a custom icon, create a 40x40 pixel image and save it as PluginIcon.png. 
  
  _C:\Users\Public\Documents\National Instruments\ADAS\Plugins\IOPlugins\\<PluginName>\PluginIcon.png_
   
-  
+ [Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents) 
