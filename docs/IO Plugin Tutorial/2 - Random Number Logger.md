@@ -88,7 +88,19 @@ Any references open in _Initialize_ should be closed in _Finalize_.  No changes 
 No changes required for _Handle Message_.
 
 ## Build IO Plugin
+The IO Plugin Project Template includes a predefined build specification for a Packed Project Library. The build specification does not need any modifications. Changing names may actual result in an unfunctional plugin.
+
+The destination directory is set to be the default directory for IO plugins. This makes it easy to test your plugin immediately. This field could be modified if you are not working on a system with Data Record AD but wish to build a plugin for later installation.
+
+No modifications to the build specification to include additional dependencies is required. 
+
+Expand the Build Specifications in the LabVIEW project.  Right-click on the specification and select _Build_.
 
 ## Test IO Plugin  
+Launch the Data Record AD System Configuration Editor. Open the ADAS project created in the first tutorial. Open the project's ADAS System Configuration. From the IO Plugin palette, find your recently created Random Number Logger IO plugin and add it to the configuration.  Connect the output of the _Random Number Generator_ to the input of the _Random Number Logger_ as shown in the configuration below.
 
+![image](https://user-images.githubusercontent.com/15633959/177414175-1ec65571-c687-43e2-b84f-c1419aeaebc9.png)
 
+Generate the configuration and launch Data Record AD.  You should be able to see the IO Plugin names listed on the main Data Record AD application user interface. You should also see both listed in the array of _Processing Element Statistics_ in the Data Record AD Debug Panel. The _State_ of the IO Plugins should be _Processing_ and _Channel Segement Bytes_ and _Total Memory (MB)_ should not be static.
+
+Verify the file(s) are created as expected in the specified directory.
