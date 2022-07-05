@@ -5,7 +5,7 @@ This is part 2 of a five part tutorial.  It walks through the development of an 
 
 # Create Data Sink IO Plugin - Text File
 ## Create Project
-Launch LabVIEW and create a new _ADAS IO Plugin Template_ project. Complete the information for the template as provided. The IO Plugin Name should be RandomNumberLogger. The IO Plugin Directory should be _\<Checkout Directory>/IO Plugins/RandomNumberLogger_. It is also a good idea to update the icon to be more representative of the plugin purpose. When you are finished updating the information, select Finish.  
+Launch LabVIEW and create a new _ADAS IO Plugin Template_ project. Complete the information for the template as provided. The IO Plugin Name should be _RandomNumberLogger_. The IO Plugin Directory should be _\<Checkout Directory>/IO Plugins/RandomNumberLogger_. It is also a good idea to update the icon to be more representative of the plugin purpose. When you are finished updating the information, select Finish.  
 
 ![image](https://user-images.githubusercontent.com/15633959/176764681-25bb4e67-04ba-41d3-889c-61b45672a219.png)
 
