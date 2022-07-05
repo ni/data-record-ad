@@ -1,45 +1,10 @@
 # IO Plugin Tutorial  
-The purpose of this tutorial is to walk new IO plugin developers through the creation of three different IO plugins that can be run without hardware.  Once the tutorial is complete, developers will have three separate IO plugins that can be used together with Data Record AD.
-
-<img src="https://user-images.githubusercontent.com/15633959/154979199-e8fb5515-37d2-403d-aa80-6da8e54fdd91.png" width="300">
-
-The first plugin will generate random numbers.  The second plugin will save the generated numbers to disk as a text file.  The third plugin can be injected between the random number generator and the text file logger and it will allow the user to scale the random numbers.
-
-As developers move through the tutorial they should note that less detailed instructions are provided for the second and third plugins - this is intentional.  If there are questions, the instructions for the first tutorial should be referenced.
-
-# Table of Contents
-1. [Update IO Plugin Project Template](./IO%20Plugin%20Tutorial.md#update-io-plugin-project-template)
-1. [Create a Branch](./IO%20Plugin%20Tutorial.md#create-a-branch)
-1. [Create Data Source IO Plugin - Random Number Generator](./IO%20Plugin%20Tutorial.md#create-data-source-io-plugin---random-number-generator)
-1. [Create Data Sink IO Plugin - Text File](./IO%20Plugin%20Tutorial.md#create-data-sink-io-plugin---text-file)
-1. [Create Data Processing IO Plugin - Scaling Factor](./IO%20Plugin%20Tutorial.md#create-data-processor-io-plugin---scaling-factor)
-1. [Create Data Publisher IO Plugin - gRPC](./IO%20Plugin%20Tutorial.md#create-data-publisher-io-plugin---grpc)
-1. [Modify IO Plugin to Support Plugin-Targeted gRPC Messages]([./IO%20Plugin%20Tutorial.md#modify-io-plugin-to-support-a-plugin-targeted-grpc-message)
-1. [Additional Developer Features](./IO%20Plugin%20Tutorial.md#additional-developer-features)
-
-
-## Update IO Plugin Project Template
-To assist developers with creating IO plugins, a LabVIEW Project Template has been created.  This project template is installed with the Data Record AD Development Suite.
-
-The source code for the project template also exists within this GitHub repository.  It is a good idea to update your project template from GitHub to ensure you are starting with the latest template code.
-
-Navigate to /../IO Plugin Creation Tool.  You'll find the necessary files and a python script that can be used to copy them to the appropriate location.
-
-![image](https://user-images.githubusercontent.com/15633959/154981043-fc8a9235-24d5-463d-92d9-a583ac46eaac.png)
-
-To use the python script, simply open a command prompt and type the script name.  Use _-f_ to force the script to copy.  You must have python installed to use the script.  For more information on installing/using python please visit https://www.python.org/.
-
-<img src="https://user-images.githubusercontent.com/15633959/154981599-a488b1dd-7108-46d8-b802-3ac69c51abdc.png" width="1000">
+This is part 1 of a five part tutorial.  It walks through the development of an IO plugin that generates random numbers based on user configurable range and update rate.
 
 [Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents)
 
-## Create a Branch
-Before creating any plugins, if you want to work within the Data Record AD repository, it is necessary to create a branch to work in.  The recommended branch name for this tutorial is _users/\<yourname>/sandbox/tutorial._  If this is your first time creating a branch, you may find [this tutorial](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository) helpful.
-
-[Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents)
-
-## Create Data Source IO Plugin - Random Number Generator
-### Create Project
+# Create Data Source IO Plugin - Random Number Generator
+## Create Project
 Launch LabVIEW and select _Create Project_:
 
 <img src="https://user-images.githubusercontent.com/15633959/154990689-c1e1e95a-d72f-4759-8514-5ed28a276732.png" width="600">
@@ -59,7 +24,7 @@ LabVIEW will now generate your project from the template code.  A progress bar w
 When the project is completely generated, a Windows Explorer window will open at the location specicified within the project template:  
 <img src="https://user-images.githubusercontent.com/15633959/155002647-97bed789-8c7e-424b-91ac-835cc45d9695.png" width="600">
 
-### Edit IO Plugin Configuration Parameters
+## Edit IO Plugin Configuration Parameters
 Open the generated project.  Navigate down to the Configuration.ctl type definition (PE >> RandomNumberGenerator.lvlib >> RandomNumberGenerator.lvclass >> Types).  Modify the type definition to have four numeric controls as shown here:
   
 ![image](https://user-images.githubusercontent.com/15633959/155005939-c421a0d3-e5e8-4105-a198-0c3651ef40c4.png)
@@ -68,13 +33,13 @@ Two of these configuration parameters were selected because we plan to use the _
   
 ![image](https://user-images.githubusercontent.com/15633959/155004828-9ae3b8bc-2dee-48ac-9891-f1a42b9dbdfb.png)
 
-### Set Default Configuration Parameters  
+## Set Default Configuration Parameters  
 Setting the current values to default for the type definition controls does not set the default values for the controls within the Data Record AD System Configuration Editor.  To set default values for the controls you need to edit _Default Configuration Parameters.vi_.  The default values must be set on the block diagram - there is a note on the front panel to remind the user.
   
 ![image](https://user-images.githubusercontent.com/15633959/176756576-7a1601a3-4c89-4a07-a0e2-5a82161fe553.png)
  
   
-### Update Mutate Configuration to Current
+## Update Mutate Configuration to Current
 Removing the string from the type definition will cause the _Mutate Configuration to Current.vi_ to break.
   
 ![image](https://user-images.githubusercontent.com/15633959/155006182-eb805d84-166c-4fb6-bf09-7e6a2138a159.png)
@@ -87,12 +52,12 @@ In our case, we have not released the plugin so we do not need to worry about mu
   
 <img src="https://user-images.githubusercontent.com/15633959/155187904-dff1afa7-677d-4cb1-8652-84b5ef83527b.png" width="1000">
 
-### Update States
+## Update States
 Expanding the states folder will show the core states the IO plugin will cycle through.  The project will have the states listed alphabetically but some developers find it helpful to rearrange them to better correlate to their order of operation:
   
 <img src="https://user-images.githubusercontent.com/15633959/155188525-423e2b7f-38cd-4d00-b432-fa8f296f517e.png" width="800">
 
-#### Initialize
+### Initialize
 Initialize is the first state an IO plugin executes.  It's purpose is to initialize global lifetime resources for the plugin.  If your plugin involves hardware you may open a reference to the hardware in Initialize.
   
 ![image](https://user-images.githubusercontent.com/15633959/155189729-8f141733-c2f0-46f3-8012-afabcc3fd156.png)
@@ -103,7 +68,7 @@ In the plugin we are developing, we allow the user to set the update rate for pe
   
 ![image](https://user-images.githubusercontent.com/15633959/155191068-241b9adc-4698-41e9-bd5f-2ef1475b8fcd.png)
 
-#### Read Parameters
+### Read Parameters
 It is rare that this state requires any modifications.  It simply populates the IO plugin class with the configuration data.  We will not make any changes.
   
 ![image](https://user-images.githubusercontent.com/15633959/155192964-2d2eab2a-9171-46ee-8c59-72e361b99d51.png)
@@ -119,7 +84,7 @@ Unbundle the _Update Rate (ms)_ from the configuration and bundle it into _Timin
 
 ![image](https://user-images.githubusercontent.com/15633959/155197870-db047b0d-e038-4d2c-8a7a-1c7fbded79d9.png)
 
-#### Process
+### Process
 The majority of your plugin behavior is typically implemented within the _Process_ state.  Process runs repeatedly in a loop until Data Record AD is shutdown.  The loop rate depends upon your timing parameters previously set.  The template code contains helpful bookmarks discussing _Custom Data_ but no actual code.
   
 ![image](https://user-images.githubusercontent.com/15633959/155199131-e7e2b189-9b37-4508-8410-465d4e879bac.png)
@@ -138,20 +103,20 @@ If you change the _Terminal_ name to anything other than the default you will ne
 
 <img src="https://user-images.githubusercontent.com/15633959/155563213-51f3553a-9ce0-4882-b24b-fa4ab907ba98.png" width="800">
  
-#### Cleanup Session
+### Cleanup Session
 This is the state that runs before reconfigure and/or after process while shutting down.  It is where you should close/cleanup any session resources that were opened in _Configure Session_.  No changes are necessary to _Cleanup Session_ for our plugin.  
 
 ![image](https://user-images.githubusercontent.com/15633959/155563913-7a1c308e-4968-42a7-994c-ac2d5a5abaca.png)
 
-#### Finalize
+### Finalize
 This is the final state that runs before Data Record AD shuts down.  It is where you should close/cleanup any resources that were opened in _Initialize_.  No changes are necessary to _Finalize_ for our plugin.
   
 ![image](https://user-images.githubusercontent.com/15633959/155564078-727fc455-8f05-4e26-b5bd-95ea6e3b7d0c.png)
 
-#### Handle Message
+### Handle Message
 This state handles asynchronous plugin-targeted gRPC messages.  The Data Record AD engine simply forwards incoming messages to all plugins and it is up to each plugin to handle incoming messages.  The initial tutorial plugins do not utilize plugin-targted gRPC messages.
 
-### Build IO Plugin 
+## Build IO Plugin 
 Expand the Build Specifications in the LabVIEW project.  The IO Plugin Project Template includes a predefined build specification for a Packed Project Library.  The build specification does not need any modifications.  Changing names may actual result in an unfunctional plugin.  
 
 The destination directory is set to be the default directory for IO plugins.  This makes it easy to test your plugin immediately.  This field could be modified if you are not working on a system with Data Record AD but wish to build a plugin for later installation.
@@ -164,7 +129,7 @@ Right-click on the specification and select _Build_.
 
 ![image](https://user-images.githubusercontent.com/15633959/176740984-40480d7c-c721-408d-8a8d-25855b104bf6.png)
 
-### Test IO Plugin
+## Test IO Plugin
 Launch the Data Record AD System Configuration Editor.  Create a new project.  Open the project's ADAS System Configuration.  From the IO Plugin palette, find your recently created _Random Number Generator_ IO plugin and add it to the configuration. 
   
 ![image](https://user-images.githubusercontent.com/15633959/176757516-664ade01-8890-4440-a5a8-3f516b4adf6a.png)
