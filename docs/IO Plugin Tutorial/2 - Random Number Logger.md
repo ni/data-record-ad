@@ -70,19 +70,25 @@ For the _File Split_ instance of _Time_ we need to check if the split time has e
 
 ![image](https://user-images.githubusercontent.com/15633959/177380935-0d8083fb-f052-4238-acb7-3a9a916e051a.png)
 
-So how does the _Index_ actually work to determine if time has elapsed?
-
-
-
-
-
-
+So how does the _Index_ help to determine if time has elapsed? It allows us to compare the current time to the start time and expected elapsed time.  For example, if the split time was 10 seconds and our relative start time was 2519, we would expect the file splits to happen at: 
+<br>2529 (2519 + 1\*10) --> Index = 1
+<br>2539 (2519 + 2\*10) --> Index = 2
+<br>2549 (2519 + 3\*10) --> Index = 3
+<br> and so on...
 
 ### Cleanup Session
+Any references open in _Configure Session_ should be closed in _Cleanup Session_.  For this IO plugin we need to close our file reference.
+
+![image](https://user-images.githubusercontent.com/15633959/177385885-ee2fd231-0673-4634-98e6-09804b612c37.png)
+
 ### Finalize
+Any references open in _Initialize_ should be closed in _Finalize_.  No changes required for _Finalize_.
+
 ### Handle Message
 No changes required for _Handle Message_.
+
 ## Build IO Plugin
+
 ## Test IO Plugin  
 
 
