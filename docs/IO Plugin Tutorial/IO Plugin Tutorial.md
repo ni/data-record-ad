@@ -9,17 +9,6 @@ As developers move through the tutorial they should note that less detailed inst
 
 Additional instructions are provided for an additional plugin that utilizes the DatastreamGrpc library to publish the generated data.  Instructions are also included to modify the _Random Number Generator_ IO plugin to accept plugin-targeted gRPC messages.
 
-# Table of Contents
-1. [Update IO Plugin Project Template](./IO%20Plugin%20Tutorial.md#update-io-plugin-project-template)
-1. [Create a Branch](./IO%20Plugin%20Tutorial.md#create-a-branch)
-1. [Create Data Source IO Plugin - Random Number Generator](./IO%20Plugin%20Tutorial.md#create-data-source-io-plugin---random-number-generator)
-1. [Create Data Sink IO Plugin - Text File](./IO%20Plugin%20Tutorial.md#create-data-sink-io-plugin---text-file)
-1. [Create Data Processing IO Plugin - Scaling Factor](./IO%20Plugin%20Tutorial.md#create-data-processor-io-plugin---scaling-factor)
-1. [Create Data Publisher IO Plugin - gRPC](./IO%20Plugin%20Tutorial.md#create-data-publisher-io-plugin---grpc)
-1. [Modify IO Plugin to Support Plugin-Targeted gRPC Messages]([./IO%20Plugin%20Tutorial.md#modify-io-plugin-to-support-a-plugin-targeted-grpc-message)
-1. [Additional Developer Features](./IO%20Plugin%20Tutorial.md#additional-developer-features)
-
-
 ## Update IO Plugin Project Template
 To assist developers with creating IO plugins, a LabVIEW Project Template has been created.  This project template is installed with the Data Record AD Development Suite.
 
@@ -33,12 +22,8 @@ To use the python script, simply open a command prompt and type the script name.
 
 <img src="https://user-images.githubusercontent.com/15633959/154981599-a488b1dd-7108-46d8-b802-3ac69c51abdc.png" width="1000">
 
-[Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents)
-
 ## Create a Branch
 Before creating any plugins, if you want to work within the Data Record AD repository, it is necessary to create a branch to work in.  The recommended branch name for this tutorial is _users/\<yourname>/sandbox/tutorial._  If this is your first time creating a branch, you may find [this tutorial](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository) helpful.
-
-[Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents)
 
 ## Create Data Source IO Plugin - Random Number Generator
 Instructions for creating the Random Number Generator IO plugin can be found [here](./1%20-%20Random%20Number%20Generator.md).
@@ -57,7 +42,7 @@ Instructions for modifying the Random Number Generator IO plugin to support plug
 
 ## Additional Developer Features
 ### Custom Data
-See [this README](./CustomData#custom-data-types) to learn more about Custom Data and how it is used within the IO plugins.
+See [this README](../../CustomData/README.md) to learn more about Custom Data and how it is used within the IO plugins.
 
 ### Icons
 If no icons are specified, the default plugin icon is used:
@@ -71,5 +56,4 @@ Users can also specify custom icons such as this:
 To use a custom icon, create a 40x40 pixel image and save it as PluginIcon.png.  Colors and transparency are supported.  The file needs to reside within the deployed plugin directory:
  
  _C:\Users\Public\Documents\National Instruments\ADAS\Plugins\IOPlugins\\<PluginName>\PluginIcon.png_
-  
- [Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents) 
+ 
