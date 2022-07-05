@@ -1,5 +1,5 @@
 # IO Plugin Tutorial  
-This is part 2 of a five part tutorial.  
+This is part 2 of a five part tutorial.  It walks through the development of an IO plugin that reads numeric values (double custom data type) and saves them to a text file.  It is meant to be used with the _Random Number Generator_ IO plugin.
 
 [Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents)
 
