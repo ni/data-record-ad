@@ -101,6 +101,6 @@ Launch the Data Record AD System Configuration Editor. Open the ADAS project cre
 
 ![image](https://user-images.githubusercontent.com/15633959/177414175-1ec65571-c687-43e2-b84f-c1419aeaebc9.png)
 
-Generate the configuration and launch Data Record AD.  You should be able to see the IO Plugin names listed on the main Data Record AD application user interface. You should also see both listed in the array of _Processing Element Statistics_ in the Data Record AD Debug Panel. The _State_ of the IO Plugins should be _Processing_ and _Channel Segement Bytes_ and _Total Memory (MB)_ should not be static.
+Generate the configuration and launch Data Record AD.  You should be able to see the IO Plugin names listed on the main Data Record AD application user interface. You should also see both listed in the array of _Processing Element Statistics_ in the Data Record AD Debug Panel. The _State_ of the IO Plugins should be _Processing_ and no errors should be listed.
 
 Verify the file(s) are created as expected in the specified directory.
