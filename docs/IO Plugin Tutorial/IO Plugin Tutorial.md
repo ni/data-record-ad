@@ -41,19 +41,19 @@ Before creating any plugins, if you want to work within the Data Record AD repos
 [Return to Table of Contents](./IO%20Plugin%20Tutorial.md#table-of-contents)
 
 ## Create Data Source IO Plugin - Random Number Generator
-Instructions for creating the Random Number Generator IO plugin can be found [here](./1%20-%20Random%20Number%20Generator.md#io-plugin-tutorial).
+Instructions for creating the Random Number Generator IO plugin can be found [here](./1%20-%20Random%20Number%20Generator.md).
 
 ## Create Data Sink IO Plugin - Text File
-Instructions for creating the Random Number Logger IO plugin can be found [here]().
+Instructions for creating the Random Number Logger IO plugin can be found [here](./2%20-%20Random%20Number%20Logger.md).
 
 ## Create Data Processor IO Plugin - Scaling Factor
-Instructions for creating the Random Number Scaling Factor IO plugin can be found [here]().
+Instructions for creating the Random Number Scaling Factor IO plugin can be found [here](./3%20-%20Random%20Number%20Scaling%20Factor.md).
 
 ## Create Data Publisher IO Plugin - gRPC 
-Instructions for creating the Random Number Publisher IO plugin can be found [here]().
+Instructions for creating the Random Number Publisher IO plugin can be found [here](./4%20-%20Random%20Number%20Publisher.md).
 
 ## Modify IO Plugin to Support a Plugin-Targeted gRPC Message
-Instructions for modifying the Random Number Generator IO plugin to support plugin-targeted gRPC messages can be found [here]().
+Instructions for modifying the Random Number Generator IO plugin to support plugin-targeted gRPC messages can be found [here](./5%20-%20Random%20Number%20Generator%20with%20Plugin%20Targeted%20Message%20Support.md).
 
 ## Additional Developer Features
 ### Custom Data
