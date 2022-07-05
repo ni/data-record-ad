@@ -21,7 +21,7 @@ Values for the _File Split_ enum:<br>
 Note: To complete the tutorial in less time, the file split functionality may be omitted.
 
 ## Set Default Configuration Parameters 
-Edit the default configuration parameters (_RandomNumberLogger.lvlib:RandomNumberGenerator.lvclass:Default Configuration Parameters.vi_):<br>
+Edit the default configuration parameters (_RandomNumberLogger.lvlib:RandomNumberLogger.lvclass:Default Configuration Parameters.vi_):<br>
 Base File Name: Random.txt<br>
 File Directory: C:\Data<br>
 File Split: Time<br>
