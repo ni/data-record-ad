@@ -1,0 +1,11 @@
+#! /usr/bin/python
+
+from os import path
+import subprocess
+import sys
+
+githooksPath = path.dirname(__file__)
+repoRoot = path.abspath(path.join(githooksPath, '..', '..'))
+customDataScriptPath = path.abspath(path.join(repoRoot, 'Custom Data Type API', 'setupEnv_CustomDataTypes.py'))
+
+subprocess.call(['py', customDataScriptPath, '-f'])
