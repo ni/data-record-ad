@@ -58,7 +58,7 @@ No changes required for _Handle Message_.
 Expand the Build Specifications in the LabVIEW project. Right-click on the specification and select Build.
 
 ## Test IO Plugin 
-Launch the Data Record AD System Configuration Editor. Open the ADAS project created in the first tutorial. Open the project's ADAS System Configuration. From the IO Plugin palette, find your recently created Random Number Scaling Factor IO plugin and add it to the configuration. 
+Launch the Data Record AD System Configuration Editor. Open the ADAS project from the second tutorial. Open the project's ADAS System Configuration. From the IO Plugin palette, find your recently created Random Number Scaling Factor IO plugin and add it to the configuration. 
 
 Disconnect the output of the _Random Number Generator_ from the input of the _Random Number Logger_.  Connect the output of the _Random Number Generator_ to the input of the _Random Number Scaling Factor_.  Connect each output from the _Random Number Scaling Factor_ to inputs of two _Random Number Logger_ IO plugins.  Be sure to modify the file name to be different for each _Random Number Logger_ IO plugin:
 
