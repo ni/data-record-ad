@@ -17,7 +17,7 @@ Open the generated project. Navigate down to the Configuration.ctl type definiti
 
 ## Set Default Configuration Parameters  
 Edit the default configuration parameters (_RandomNumberScalingFactor.lvlib:RandomNumberScalingFactor.lvclass:Default Configuration Parameters.vi_):
-Scaling Factor: 10
+<br>Scaling Factor: 10
 
 ## Update Mutate Configuration to Current  
 Removing the string from the type definition will cause the _Mutate Configuration to Current.vi_ to break.  In our case, we have not released the plugin so we do not need to worry about mutating the configuration. The simplest thing to do right now would be to simply pass through the cluster.  See the first IO plugin tutorial, Random Number Generator, for more details.
