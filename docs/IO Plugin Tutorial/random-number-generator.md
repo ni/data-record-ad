@@ -13,7 +13,7 @@ Select _ADAS IO Plugin Template_ from the list.
   
 <img src="https://user-images.githubusercontent.com/15633959/154991045-051586f8-3c22-4972-b5e4-563f09f9e91a.png" width="600">
 
-Complete the information for the template as provided.  The _IO Plugin Name_ should be _RandomNumberGenerator_.  The _IO Plugin Directory_ should be _<Checkout Directory)/IO Plugins/RandomNumberGenerator_.  It is also a good idea to update the icon to be more representative of the plugin purpose.  When you are finished updating the information, select _Finish_.
+Complete the information for the template as provided.  The _IO Plugin Name_ should be _RandomNumberGenerator_.  The _IO Plugin Directory_ should be _\<Checkout Directory>/IO Plugins/RandomNumberGenerator_.  It is also a good idea to update the icon to be more representative of the plugin purpose.  When you are finished updating the information, select _Finish_.
 
 <img src="https://user-images.githubusercontent.com/15633959/154993224-3c26ad00-a073-49da-a570-4de32a146a9a.png" width="800">
 
