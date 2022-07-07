@@ -1,7 +1,7 @@
 # Overview  
 This is part 4 of a five part tutorial.  It contains instructions on creating an IO plugin that publishes the random number as a gRPC message.
 
-[Return to IO Plugin Tutorial](./IO%20Plugin%20Tutorial.md#io-plugin-tutorial)
+[Return to IO Plugin Tutorial](../IO%20Plugin%20Tutorial.md#io-plugin-tutorial)
 
 # Create Data Publisher IO Plugin - gRPC 
 ## Create Project
