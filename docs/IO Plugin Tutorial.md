@@ -26,20 +26,22 @@ To use the python script, simply open a command prompt and type the script name.
 Before creating any plugins, if you want to work within the Data Record AD repository, it is necessary to create a branch to work in.  The recommended branch name for this tutorial is _users/\<yourname>/sandbox/tutorial._  If this is your first time creating a branch, you may find [this tutorial](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository) helpful.
 
 # IO Plugin Tutorials
+This series of IO Plugin tutorials walks users through developing a variety of plugins with different features.  They are designed to be completed in the order listed below.  The first plugin tutorial has more details and information than the subsequent tutorials.
+
 ## Create Data Source IO Plugin - Random Number Generator
-Instructions for creating the Random Number Generator IO plugin can be found [here](./1%20-%20Random%20Number%20Generator.md#overview).
+Instructions for creating the Random Number Generator IO plugin can be found [here](./IO%20Plugin%20Tutorial/random-number-generator.md#overview).
 
 ## Create Data Sink IO Plugin - Text File
-Instructions for creating the Random Number Logger IO plugin can be found [here](./2%20-%20Random%20Number%20Logger.md#overview).
+Instructions for creating the Random Number Logger IO plugin can be found [here](./IO%20Plugin%20Tutorial/random-number-logger.md#overview).
 
 ## Create Data Processor IO Plugin - Scaling Factor
-Instructions for creating the Random Number Scaling Factor IO plugin can be found [here](./3%20-%20Random%20Number%20Scaling%20Factor.md#overview).
+Instructions for creating the Random Number Scaling Factor IO plugin can be found [here](./IO%20Plugin%20Tutorial/random-number-scaling-factor.md#overview).
 
 ## Create Data Publisher IO Plugin - gRPC 
-Instructions for creating the Random Number Publisher IO plugin can be found [here](./4%20-%20Random%20Number%20Publisher.md#overview).
+Instructions for creating the Random Number Publisher IO plugin can be found [here](./IO%20Plugin%20Tutorial/random-number-publisher.md#overview).
 
 ## Modify IO Plugin to Support a Plugin-Targeted gRPC Message
-Instructions for modifying the Random Number Generator IO plugin to support plugin-targeted gRPC messages can be found [here](./5%20-%20Random%20Number%20Generator%20with%20Plugin%20Targeted%20Message%20Support.md#overview).
+Instructions for modifying the Random Number Generator IO plugin to support plugin-targeted gRPC messages can be found [here](./IO%20Plugin%20Tutorial/random-number-generator-with-plugin-targeted-message-support.md#overview).
 
 # Additional Developer Features
 ## Custom Data
