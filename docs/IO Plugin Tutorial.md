@@ -58,6 +58,6 @@ Users can also specify custom icons such as this:
 
 To use a custom icon, create a 40x40 pixel image and save it as PluginIcon.png.  Colors and transparency are supported.  The file needs to reside within the deployed plugin directory:
  
- _C:\Users\Public\Documents\National Instruments\ADAS\Plugins\IOPlugins\\<PluginName>\PluginIcon.png_
+ _C:\Users\Public\Documents\National Instruments\ADAS\Plugins\IOPlugins\\[PluginName]\PluginIcon.png_
  
 ## Test System Interface
