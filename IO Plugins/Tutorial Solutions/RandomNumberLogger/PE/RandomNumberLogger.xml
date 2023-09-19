@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<ProcessingElement>
+  <Type>RandomNumberLogger</Type>
+  <Name>RandomNumberLogger</Name>
+  <AliasBase>RandomNumberLogger</AliasBase>
+  <Description>%DESCRIPTION%</Description>
+  <TemplateType>Plugin</TemplateType>
+  <VIExec>niPluginWrapper</VIExec>
+  <Parameters>
+    
+    <Parameter Description="Plugin-specific Configuration Parameters" Name="Configuration" Type="JSON" Value="{&quot;Version&quot;:{&quot;Major&quot;:1,&quot;Minor&quot;:0,&quot;Fix&quot;:0,&quot;Build&quot;:0},&quot;Configuration&quot;:{&quot;Name&quot;:&quot;Default Configuration&quot;,&quot;DataType&quot;:&quot;Container&quot;,&quot;ExtraTypeInfo&quot;:&quot;&quot;,&quot;DataValue&quot;:&quot;&quot;,&quot;SubNodes&quot;:[{&quot;Name&quot;:&quot;Base File Name&quot;,&quot;DataType&quot;:&quot;String&quot;,&quot;ExtraTypeInfo&quot;:&quot;&quot;,&quot;DataValue&quot;:&quot;RandomNumber&quot;,&quot;SubNodes&quot;:[]},{&quot;Name&quot;:&quot;File Directory&quot;,&quot;DataType&quot;:&quot;Path&quot;,&quot;ExtraTypeInfo&quot;:&quot;&quot;,&quot;DataValue&quot;:&quot;C:\\Data&quot;,&quot;SubNodes&quot;:[]},{&quot;Name&quot;:&quot;File Split&quot;,&quot;DataType&quot;:&quot;EnumU16&quot;,&quot;ExtraTypeInfo&quot;:&quot;[\&quot;None\&quot;,\&quot;Time\&quot;,\&quot;Size\&quot;]&quot;,&quot;DataValue&quot;:&quot;Time&quot;,&quot;SubNodes&quot;:[]},{&quot;Name&quot;:&quot;Split Time/Size (sec/MB)&quot;,&quot;DataType&quot;:&quot;Double&quot;,&quot;ExtraTypeInfo&quot;:&quot;&quot;,&quot;DataValue&quot;:&quot;0.500000&quot;,&quot;SubNodes&quot;:[]}]}}"/></Parameters>
+  <Interface>
+    <Input Description="Input Data" Name="Input"/>
+    <Output Description="Output Data" Name="Output"/>
+  </Interface>
+
+
+
+</ProcessingElement>

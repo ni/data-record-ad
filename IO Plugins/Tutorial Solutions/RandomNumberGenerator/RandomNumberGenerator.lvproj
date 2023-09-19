@@ -392,7 +392,6 @@
 				<Item Name="Get VI Library File Info.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Get VI Library File Info.vi"/>
 				<Item Name="GetHelpDir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetHelpDir.vi"/>
 				<Item Name="GetRTHostConnectedProp.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetRTHostConnectedProp.vi"/>
-				<Item Name="GMUCXNET.lvlib" Type="Library" URL="/&lt;vilib&gt;/ADAS Record/CustomDataTypes/GMUCXNET/GMUCXNET.lvlib"/>
 				<Item Name="GPS.lvlib" Type="Library" URL="/&lt;vilib&gt;/ADAS Record/CustomDataTypes/GPS/GPS.lvlib"/>
 				<Item Name="Has LLB Extension.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Has LLB Extension.vi"/>
 				<Item Name="High Resolution Relative Seconds.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/High Resolution Relative Seconds.vi"/>
@@ -526,7 +525,7 @@
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_postActionVIID" Type="Ref">/My Computer/Build Actions/Post-Build Action - PPL.vi</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{5E1F0916-AC3B-44A1-9929-08C5894A5E8B}</Property>
-				<Property Name="Bld_version.build" Type="Int">4</Property>
+				<Property Name="Bld_version.build" Type="Int">5</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Bld_version.minor" Type="Int">2</Property>
 				<Property Name="Bld_version.patch" Type="Int">3</Property>
